@@ -147,7 +147,7 @@ class ModelAdmin2(BaseAdmin2):
     def get_update_kwargs(self):
         kwargs = self.get_default_view_kwargs()
         kwargs.update({
-            'form_class': self.update_form_class if self.update_form_class else self.form_class,
+            # 'form_class': self.update_form_class if self.update_form_class else self.form_class,
         })
         return kwargs
 

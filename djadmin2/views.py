@@ -9,6 +9,8 @@ from django.views import generic
 
 from braces.views import AccessMixin
 
+from .forms import Admin2Form
+
 ADMIN2_THEME_DIRECTORY = getattr(settings, "ADMIN2_THEME_DIRECTORY", "admin2/bootstrap")
 
 
@@ -108,7 +110,7 @@ class ModelDetailView(AdminModel2Mixin, generic.DetailView):
 
 
 class ModelEditFormView(AdminModel2Mixin, generic.UpdateView):
-    form_class = None
+    form_class = Admin2Form
     success_url = "../../"
     default_template_name = "model_edit_form.html"
     permission_type = 'change'
