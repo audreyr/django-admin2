@@ -6,6 +6,8 @@ from django.utils.encoding import python_2_unicode_compatible
 class Post(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
+    pub_date = models.DateField(null=True, blank=True)
+    created = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
         return self.title
